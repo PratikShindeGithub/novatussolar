@@ -34,7 +34,7 @@ export function LiveDashboard() {
       <SectionHeading
         eyebrow="Live Energy Dashboard"
         title="Watch your plant work, in real time"
-        subtitle="Every SolarMax plant ships with monitoring — generation, health and predictive maintenance in one view."
+        subtitle="Every Novatussolar plant ships with monitoring — generation, health and predictive maintenance in one view."
       />
 
       <div className="mt-14 grid gap-6 lg:grid-cols-[1.2fr_1fr]">

@@ -7,9 +7,9 @@ import { CtaSection } from "@/components/site/CtaSection";
 export const Route = createFileRoute("/calculator")({
   head: () => ({
     meta: [
-      { title: "Solar Savings Calculator | SolarMax Pune" },
+      { title: "Solar Savings Calculator | Novatussolar" },
       { name: "description", content: "Estimate system size, savings, payback, EMI and CO2 reduction instantly." },
-      { property: "og:title", content: "Solar Savings Calculator | SolarMax Pune" },
+      { property: "og:title", content: "Solar Savings Calculator | Novatussolar" },
       { property: "og:description", content: "Estimate system size, savings, payback, EMI and CO2 reduction instantly." },
     ],
   }),

@@ -17,16 +17,16 @@ import { CtaSection } from "@/components/site/CtaSection";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "SolarMax Pune | Rooftop & Industrial Solar Energy" },
+      { title: "Novatussolar | Rooftop & Industrial Solar Energy" },
       {
         name: "description",
         content:
-          "Cut electricity bills by up to 90% with SolarMax Pune — rooftop, commercial and industrial solar plants with subsidy support and 25-year warranty.",
+          "Cut electricity bills by up to 90% with Novatussolar — rooftop, commercial and industrial solar plants with subsidy support and 25-year warranty.",
       },
-      { property: "og:title", content: "SolarMax Pune | Rooftop & Industrial Solar Energy" },
+      { property: "og:title", content: "Novatussolar | Rooftop & Industrial Solar Energy" },
       {
         property: "og:description",
-        content: "Cut electricity bills by up to 90% with SolarMax Pune — rooftop, commercial and industrial solar plants with subsidy support and 25-year warranty.",
+        content: "Cut electricity bills by up to 90% with Novatussolar — rooftop, commercial and industrial solar plants with subsidy support and 25-year warranty.",
       },
     ],
   }),

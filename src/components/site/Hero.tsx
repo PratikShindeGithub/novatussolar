@@ -63,7 +63,7 @@ export function Hero() {
           className="mt-6 max-w-xl text-lg text-white/85"
         >
           Reduce electricity bills by up to 90% with smart solar solutions engineered, installed and
-          monitored by SolarMax Pune.
+          monitored by Novatussolar.
         </motion.p>
 
         <motion.div

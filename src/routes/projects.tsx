@@ -6,9 +6,9 @@ import { CtaSection } from "@/components/site/CtaSection";
 export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
-      { title: "Solar Project Portfolio | SolarMax Pune" },
+      { title: "Solar Project Portfolio | Novatussolar" },
       { name: "description", content: "50 MW+ of commissioned rooftop and ground-mount solar across Pune." },
-      { property: "og:title", content: "Solar Project Portfolio | SolarMax Pune" },
+      { property: "og:title", content: "Solar Project Portfolio | Novatussolar" },
       { property: "og:description", content: "50 MW+ of commissioned rooftop and ground-mount solar across Pune." },
     ],
   }),

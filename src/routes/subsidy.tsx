@@ -6,9 +6,9 @@ import { CtaSection } from "@/components/site/CtaSection";
 export const Route = createFileRoute("/subsidy")({
   head: () => ({
     meta: [
-      { title: "Government Solar Subsidy | SolarMax Pune" },
+      { title: "Government Solar Subsidy | Novatussolar" },
       { name: "description", content: "PM Surya Ghar eligibility, documents, timeline and estimated subsidy." },
-      { property: "og:title", content: "Government Solar Subsidy | SolarMax Pune" },
+      { property: "og:title", content: "Government Solar Subsidy | Novatussolar" },
       { property: "og:description", content: "PM Surya Ghar eligibility, documents, timeline and estimated subsidy." },
     ],
   }),

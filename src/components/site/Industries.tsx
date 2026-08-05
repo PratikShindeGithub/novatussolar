@@ -30,7 +30,7 @@ export function Industries() {
         <SectionHeading
           eyebrow="Industries Served"
           title="Trusted across Pune's toughest energy loads"
-          subtitle="Hover a sector to see a recent SolarMax installation."
+          subtitle="Hover a sector to see a recent Novatussolar installation."
         />
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {industries.map((ind, i) => (

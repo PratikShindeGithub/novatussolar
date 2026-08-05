@@ -43,7 +43,7 @@ export function Footer() {
             <span className="grid size-10 place-items-center rounded-2xl bg-primary text-primary-foreground">
               <SunMedium className="size-5" />
             </span>
-            <span className="font-display text-lg font-semibold">SolarMax Pune</span>
+            <span className="font-display text-lg font-semibold">Novatussolar</span>
           </div>
           <p className="mt-4 max-w-sm text-sm text-muted-foreground">
             Powering Pune with smart solar energy — MNRE-standard rooftop, commercial and industrial
@@ -103,8 +103,8 @@ export function Footer() {
           </p>
           <p className="flex items-center gap-2">
             <Mail className="size-4 text-primary" />
-            <a href="mailto:hello@solarmaxpune.in" className="hover:text-foreground">
-              hello@solarmaxpune.in
+            <a href="mailto:hello@novatussolar.com" className="hover:text-foreground">
+              hello@novatussolar.com
             </a>
           </p>
           <div className="flex gap-3 pt-2">
@@ -122,7 +122,7 @@ export function Footer() {
         </div>
         <div className="overflow-hidden rounded-3xl border border-border">
           <iframe
-            title="SolarMax Pune office location map"
+            title="Novatussolar office location map"
             src="https://www.openstreetmap.org/export/embed.html?bbox=73.74%2C18.48%2C73.98%2C18.63&layer=mapnik"
             className="h-56 w-full"
             loading="lazy"
@@ -130,7 +130,7 @@ export function Footer() {
         </div>
       </div>
       <p className="border-t border-border px-5 py-6 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} SolarMax Pune. All rights reserved.
+        © {new Date().getFullYear()} Novatussolar. All rights reserved.
       </p>
     </footer>
   );
