@@ -3,6 +3,7 @@ import { Hero } from "@/components/site/Hero";
 import { Stats } from "@/components/site/Stats";
 import { WhyUs } from "@/components/site/WhyUs";
 import { Solutions } from "@/components/site/Solutions";
+import { Products } from "@/components/site/Products";
 import { SavingsCalculator } from "@/components/site/SavingsCalculator";
 import { Journey } from "@/components/site/Journey";
 import { Industries } from "@/components/site/Industries";
@@ -40,6 +41,7 @@ function Index() {
       <Stats />
       <WhyUs />
       <Solutions />
+      <Products />
       <SavingsCalculator />
       <Journey />
       <Industries />
