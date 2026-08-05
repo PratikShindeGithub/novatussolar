@@ -24,6 +24,11 @@ const reviews = [
     role: "City Care Hospital, Hadapsar",
     text: "Hybrid system keeps critical loads running during outages. Genuinely premium execution and after-sales support.",
   },
+  {
+    name: "Pratik Shinde",
+    role: "Owner, Shinde Industries, Pimpri",
+    text: "180 kW rooftop on our unit cut the monthly power bill by nearly 70%. Payback is tracking under four years and the install finished ahead of schedule.",
+  },
 ];
 
 export function Testimonials() {
