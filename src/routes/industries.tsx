@@ -6,9 +6,9 @@ import { CtaSection } from "@/components/site/CtaSection";
 export const Route = createFileRoute("/industries")({
   head: () => ({
     meta: [
-      { title: "Industries We Serve | SolarMax Pune" },
+      { title: "Industries We Serve | Novatussolar" },
       { name: "description", content: "Factories, schools, hospitals, hotels, IT parks and societies across Pune." },
-      { property: "og:title", content: "Industries We Serve | SolarMax Pune" },
+      { property: "og:title", content: "Industries We Serve | Novatussolar" },
       { property: "og:description", content: "Factories, schools, hospitals, hotels, IT parks and societies across Pune." },
     ],
   }),

@@ -48,7 +48,7 @@ export function Header() {
             <SunMedium className="size-5" />
           </span>
           <span className="leading-tight">
-            <span className="block font-display text-lg font-semibold">SolarMax Pune</span>
+            <span className="block font-display text-lg font-semibold">Novatussolar</span>
             <span className="block text-[11px] tracking-wide text-muted-foreground">
               Smart Solar Energy
             </span>

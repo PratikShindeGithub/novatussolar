@@ -6,9 +6,9 @@ import { CtaSection } from "@/components/site/CtaSection";
 export const Route = createFileRoute("/solutions")({
   head: () => ({
     meta: [
-      { title: "Solar Solutions | SolarMax Pune" },
+      { title: "Solar Solutions | Novatussolar" },
       { name: "description", content: "Residential, commercial, industrial, hybrid and pump solar systems." },
-      { property: "og:title", content: "Solar Solutions | SolarMax Pune" },
+      { property: "og:title", content: "Solar Solutions | Novatussolar" },
       { property: "og:description", content: "Residential, commercial, industrial, hybrid and pump solar systems." },
     ],
   }),

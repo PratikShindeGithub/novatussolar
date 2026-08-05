@@ -28,13 +28,13 @@ const posts = [
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
-      { title: "Solar Insights Blog | SolarMax Pune" },
+      { title: "Solar Insights Blog | Novatussolar" },
       {
         name: "description",
         content:
-          "Guides on solar subsidy, net metering, generation data and maintenance from SolarMax Pune's engineering team.",
+          "Guides on solar subsidy, net metering, generation data and maintenance from Novatussolar's engineering team.",
       },
-      { property: "og:title", content: "Solar Insights Blog | SolarMax Pune" },
+      { property: "og:title", content: "Solar Insights Blog | Novatussolar" },
       {
         property: "og:description",
         content: "Subsidy, net metering and generation guides from Pune solar engineers.",

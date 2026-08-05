@@ -25,7 +25,7 @@ export function WhyUs() {
   return (
     <section className="mx-auto max-w-7xl px-5 py-24">
       <SectionHeading
-        eyebrow="Why SolarMax"
+        eyebrow="Why Novatussolar"
         title="Engineering that outlives the warranty"
         subtitle="Solar is a 25-year asset. We build it like one — with the right components, the right slope and the right service."
       />
