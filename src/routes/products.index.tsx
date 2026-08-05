@@ -3,7 +3,7 @@ import { Products } from "@/components/site/Products";
 import { WhyUs } from "@/components/site/WhyUs";
 import { CtaSection } from "@/components/site/CtaSection";
 
-export const Route = createFileRoute("/products")({
+export const Route = createFileRoute("/products/")({
   head: () => ({
     meta: [
       { title: "Solar Products | Novatussolar" },
