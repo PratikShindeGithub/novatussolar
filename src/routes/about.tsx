@@ -7,9 +7,9 @@ import { CtaSection } from "@/components/site/CtaSection";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Novatussolar | Novatussolar" },
+      { title: "About Us | Novatussolar" },
       { name: "description", content: "Our story, engineering standards and Pune-first solar mission." },
-      { property: "og:title", content: "About Novatussolar | Novatussolar" },
+      { property: "og:title", content: "About Us | Novatussolar" },
       { property: "og:description", content: "Our story, engineering standards and Pune-first solar mission." },
     ],
   }),
