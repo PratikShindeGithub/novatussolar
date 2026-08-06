@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Industries } from "@/components/site/Industries";
-import { Projects } from "@/components/site/Projects";
 import { CtaSection } from "@/components/site/CtaSection";
 
 export const Route = createFileRoute("/industries")({
@@ -23,7 +22,6 @@ function Page() {
         <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">Factories, schools, hospitals, hotels, IT parks and societies across Pune.</p>
       </section>
       <Industries />
-      <Projects />
       <CtaSection />
     </>
   );

@@ -15,7 +15,6 @@ import { Route as BlogRouteImport } from './routes/blog'
 import { Route as CalculatorRouteImport } from './routes/calculator'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndustriesRouteImport } from './routes/industries'
-import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as SolutionsRouteImport } from './routes/solutions'
 import { Route as SubsidyRouteImport } from './routes/subsidy'
 import { Route as ProductsIndexRouteImport } from './routes/products.index'
@@ -51,11 +50,6 @@ const IndustriesRoute = IndustriesRouteImport.update({
   path: '/industries',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProjectsRoute = ProjectsRouteImport.update({
-  id: '/projects',
-  path: '/projects',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const SolutionsRoute = SolutionsRouteImport.update({
   id: '/solutions',
   path: '/solutions',
@@ -84,7 +78,6 @@ export interface FileRoutesByFullPath {
   '/calculator': typeof CalculatorRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
-  '/projects': typeof ProjectsRoute
   '/solutions': typeof SolutionsRoute
   '/subsidy': typeof SubsidyRoute
   '/products/$slug': typeof ProductsSlugRoute
@@ -97,7 +90,6 @@ export interface FileRoutesByTo {
   '/calculator': typeof CalculatorRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
-  '/projects': typeof ProjectsRoute
   '/solutions': typeof SolutionsRoute
   '/subsidy': typeof SubsidyRoute
   '/products/$slug': typeof ProductsSlugRoute
@@ -111,7 +103,6 @@ export interface FileRoutesById {
   '/calculator': typeof CalculatorRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
-  '/projects': typeof ProjectsRoute
   '/solutions': typeof SolutionsRoute
   '/subsidy': typeof SubsidyRoute
   '/products/$slug': typeof ProductsSlugRoute
@@ -126,7 +117,6 @@ export interface FileRouteTypes {
     | '/calculator'
     | '/contact'
     | '/industries'
-    | '/projects'
     | '/solutions'
     | '/subsidy'
     | '/products/$slug'
@@ -139,7 +129,6 @@ export interface FileRouteTypes {
     | '/calculator'
     | '/contact'
     | '/industries'
-    | '/projects'
     | '/solutions'
     | '/subsidy'
     | '/products/$slug'
@@ -152,7 +141,6 @@ export interface FileRouteTypes {
     | '/calculator'
     | '/contact'
     | '/industries'
-    | '/projects'
     | '/solutions'
     | '/subsidy'
     | '/products/$slug'
@@ -166,7 +154,6 @@ export interface RootRouteChildren {
   CalculatorRoute: typeof CalculatorRoute
   ContactRoute: typeof ContactRoute
   IndustriesRoute: typeof IndustriesRoute
-  ProjectsRoute: typeof ProjectsRoute
   SolutionsRoute: typeof SolutionsRoute
   SubsidyRoute: typeof SubsidyRoute
   ProductsSlugRoute: typeof ProductsSlugRoute
@@ -217,13 +204,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndustriesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/projects': {
-      id: '/projects'
-      path: '/projects'
-      fullPath: '/projects'
-      preLoaderRoute: typeof ProjectsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/solutions': {
       id: '/solutions'
       path: '/solutions'
@@ -262,7 +242,6 @@ const rootRouteChildren: RootRouteChildren = {
   CalculatorRoute: CalculatorRoute,
   ContactRoute: ContactRoute,
   IndustriesRoute: IndustriesRoute,
-  ProjectsRoute: ProjectsRoute,
   SolutionsRoute: SolutionsRoute,
   SubsidyRoute: SubsidyRoute,
   ProductsSlugRoute: ProductsSlugRoute,

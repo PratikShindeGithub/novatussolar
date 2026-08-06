@@ -9,7 +9,6 @@ const groups = [
     title: "Quick Links",
     items: [
       { label: "About Us", to: "/about" },
-      { label: "Projects", to: "/projects" },
       { label: "Blog", to: "/blog" },
       { label: "Contact", to: "/contact" },
     ],
