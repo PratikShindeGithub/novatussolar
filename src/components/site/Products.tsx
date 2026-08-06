@@ -11,7 +11,7 @@ export function Products() {
     <section className="mx-auto max-w-7xl px-5 py-24">
       <SectionHeading
         eyebrow="Products"
-        title="Solar components, ready for every project"
+        title="Solar Components, Ready for Every Project"
         subtitle="From water heating to high-efficiency PV panels — source quality solar products directly through Novatussolar."
       />
       <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

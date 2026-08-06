@@ -45,7 +45,7 @@ export function Testimonials() {
     <section className="mx-auto max-w-5xl px-5 py-24">
       <SectionHeading
         eyebrow="Testimonials"
-        title="10,000+ customers, 4.9 average rating"
+        title="10,000+ Customers, 4.9 Average Rating"
         subtitle="Real reviews from Pune homes, societies and factories."
       />
       <div className="glass-card mt-12 rounded-[2rem] p-10">

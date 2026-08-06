@@ -43,7 +43,7 @@ export function SubsidyGuide() {
           <SectionHeading
             align="left"
             eyebrow="Government Subsidy"
-            title="PM Surya Ghar, handled end to end"
+            title="PM Surya Ghar, Handled End to End"
             subtitle="We register, file and follow up so your subsidy lands without a single portal visit."
           />
           <Reveal delay={0.1}>
