@@ -1,8 +1,11 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, Battery, Building2, Droplets, Factory, Home, Sun } from "lucide-react";
-import commercialImg from "@/assets/commercial.jpg";
-import industrialImg from "@/assets/industrial.jpg";
-import residentialImg from "@/assets/residential.jpg";
+import commercialAsset from "@/assets/commercial-rooftop.png.asset.json";
+import industrialAsset from "@/assets/industrial-plant.png.asset.json";
+import residentialAsset from "@/assets/residential-rooftop.webp.asset.json";
+import groundAsset from "@/assets/ground-mounted.png.asset.json";
+import pumpAsset from "@/assets/solar-pump.png.asset.json";
+import hybridAsset from "@/assets/hybrid-offgrid.png.asset.json";
 import { Reveal, SectionHeading } from "./Reveal";
 
 const solutions = [
@@ -10,39 +13,40 @@ const solutions = [
     icon: Home,
     title: "Residential Rooftop",
     text: "1–10 kW on-grid systems for bungalows and row houses, subsidy included.",
-    img: residentialImg,
+    img: residentialAsset.url,
   },
   {
     icon: Building2,
     title: "Commercial Rooftop",
     text: "Offices, hotels and hospitals cutting peak tariff costs by up to 70%.",
-    img: commercialImg,
+    img: commercialAsset.url,
   },
   {
     icon: Factory,
     title: "Industrial Plant",
     text: "100 kW–5 MW captive plants with HT net metering and load studies.",
-    img: industrialImg,
+    img: industrialAsset.url,
   },
   {
     icon: Sun,
     title: "Ground Mounted",
     text: "Farm and open-land arrays with galvanised structures and tracking options.",
-    img: industrialImg,
+    img: groundAsset.url,
   },
   {
     icon: Droplets,
     title: "Solar Water Pumps",
     text: "PM-KUSUM compliant 3 HP–15 HP pump sets for farms across Pune district.",
-    img: residentialImg,
+    img: pumpAsset.url,
   },
   {
     icon: Battery,
     title: "Hybrid & Off-grid",
     text: "Lithium storage backed systems that keep running through outages.",
-    img: commercialImg,
+    img: hybridAsset.url,
   },
 ];
+
 
 export function Solutions() {
   return (
