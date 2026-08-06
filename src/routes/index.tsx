@@ -7,7 +7,6 @@ import { Products } from "@/components/site/Products";
 import { SavingsCalculator } from "@/components/site/SavingsCalculator";
 import { Journey } from "@/components/site/Journey";
 import { Industries } from "@/components/site/Industries";
-import { Projects } from "@/components/site/Projects";
 import { LiveDashboard } from "@/components/site/LiveDashboard";
 import { SubsidyGuide } from "@/components/site/SubsidyGuide";
 import { EmiCalculator } from "@/components/site/EmiCalculator";
@@ -45,7 +44,6 @@ function Index() {
       <SavingsCalculator />
       <Journey />
       <Industries />
-      <Projects />
       <LiveDashboard />
       <SubsidyGuide />
       <EmiCalculator />
