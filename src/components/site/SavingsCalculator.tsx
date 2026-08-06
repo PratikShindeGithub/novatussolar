@@ -75,7 +75,7 @@ export function SavingsCalculator() {
     <section id="calculator" className="mx-auto max-w-7xl px-5 py-24">
       <SectionHeading
         eyebrow="AI Solar Savings Estimator"
-        title="See your savings before you spend a rupee"
+        title="See your Savings Before you Spend a Rupee"
         subtitle="Move the slider, pick your property type and get an instant system size, payback and carbon estimate."
       />
 

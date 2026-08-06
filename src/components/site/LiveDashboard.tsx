@@ -33,7 +33,7 @@ export function LiveDashboard() {
     <section className="mx-auto max-w-7xl px-5 py-24">
       <SectionHeading
         eyebrow="Live Energy Dashboard"
-        title="Watch your plant work, in real time"
+        title="Watch your Plant Work, in Real Time"
         subtitle="Every Novatussolar plant ships with monitoring — generation, health and predictive maintenance in one view."
       />
 

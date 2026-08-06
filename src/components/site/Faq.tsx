@@ -44,7 +44,7 @@ export function Faq() {
 
   return (
     <section className="mx-auto max-w-3xl px-5 py-24">
-      <SectionHeading eyebrow="FAQ" title="Answers before you ask" />
+      <SectionHeading eyebrow="FAQ" title="Answers Before you Ask" />
       <div className="relative mt-10">
         <Search className="absolute top-1/2 left-4 size-4 -translate-y-1/2 text-muted-foreground" />
         <label className="sr-only" htmlFor="faq-search">

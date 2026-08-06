@@ -29,7 +29,7 @@ export function Industries() {
       <div className="mx-auto max-w-7xl px-5">
         <SectionHeading
           eyebrow="Industries Served"
-          title="Trusted across Pune's toughest energy loads"
+          title="Trusted Across Pune's Toughest Energy Loads"
           subtitle="Hover a sector to see a recent Novatussolar installation."
         />
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

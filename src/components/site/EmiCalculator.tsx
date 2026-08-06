@@ -22,7 +22,7 @@ export function EmiCalculator() {
       <div className="mx-auto max-w-5xl px-5">
         <SectionHeading
           eyebrow="Solar Financing"
-          title="EMI calculator — go solar from ₹0 down"
+          title="EMI Calculator — Go solar from ₹0 down"
           subtitle="Rooftop solar loans from partner banks at 8.5%–10.5% with tenures up to 10 years."
         />
         <Reveal>

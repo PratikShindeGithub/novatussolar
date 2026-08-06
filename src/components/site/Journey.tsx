@@ -17,7 +17,7 @@ export function Journey() {
     <section className="mx-auto max-w-5xl px-5 py-24">
       <SectionHeading
         eyebrow="Interactive Solar Journey"
-        title="From first call to first unit generated"
+        title="From first call to first Unit Generated"
         subtitle="A transparent eight-step process — you always know what happens next."
       />
       <ol className="relative mt-16 ml-4 space-y-10 border-l-2 border-dashed border-border pl-8 sm:ml-8">
