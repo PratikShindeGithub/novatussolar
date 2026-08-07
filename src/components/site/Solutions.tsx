@@ -53,7 +53,7 @@ export function Solutions() {
     <section className="mx-auto max-w-7xl px-5 py-24">
       <SectionHeading
         eyebrow="Solar Solutions"
-        title="One partner for every kind of solar plant"
+        title="One Partner for Every Kind of Solar Plant"
         subtitle="Rooftop, ground mount, hybrid or pump — designed around your load profile, roof area and budget."
       />
       <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
