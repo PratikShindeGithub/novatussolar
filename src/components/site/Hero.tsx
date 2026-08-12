@@ -36,7 +36,7 @@ export function Hero() {
 
       <motion.div
         style={{ opacity: fade }}
-        className="relative mx-auto w-full max-w-7xl px-5 pt-32 pb-24"
+        className="relative mx-auto w-full max-w-7xl px-5 pt-32 pb-24 sm:pt-40"
       >
         <motion.span
           initial={{ opacity: 0, y: 20 }}
