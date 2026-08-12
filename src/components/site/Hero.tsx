@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { motion, useScroll, useTransform } from "motion/react";
 import { ArrowRight, Calculator, ShieldCheck } from "lucide-react";
-import heroImg from "@/assets/hero-solar.jpg";
+import heroAsset from "@/assets/hero-solar.png.asset.json";
 import { SolarButton } from "./SolarButton";
 
 export function Hero() {
@@ -13,8 +13,8 @@ export function Hero() {
   return (
     <section className="relative flex min-h-dvh items-center overflow-hidden">
       <motion.img
-        src={heroImg}
-        alt="Solar engineers inspecting a photovoltaic array under a clear blue sky"
+        src={heroAsset.url}
+        alt="Rooftop solar panels at sunset"
         width={1920}
         height={1088}
         style={{ y, scale }}
