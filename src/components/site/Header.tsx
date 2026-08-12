@@ -101,7 +101,7 @@ export function Header() {
                   <ChevronDown className="size-4 transition-transform group-data-[state=open]:rotate-180" />
                 </button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="w-56 rounded-xl p-2">
+              <DropdownMenuContent align="start" className="w-72 rounded-xl p-2">
                 <DropdownMenuItem asChild>
                   <Link
                     to="/products"
@@ -112,15 +112,30 @@ export function Header() {
                 </DropdownMenuItem>
                 <hr className="my-1 border-border" />
                 {products.map((p) => (
-                  <DropdownMenuItem key={p.slug} asChild>
-                    <Link
-                      to="/products/$slug"
-                      params={{ slug: p.slug }}
-                      className="cursor-pointer rounded-lg px-3 py-2 text-sm"
-                    >
-                      {p.title}
-                    </Link>
-                  </DropdownMenuItem>
+                  <div key={p.slug}>
+                    <DropdownMenuItem asChild>
+                      <Link
+                        to="/products/$slug"
+                        params={{ slug: p.slug }}
+                        className="cursor-pointer rounded-lg px-3 py-2 text-sm font-medium"
+                      >
+                        {p.title}
+                      </Link>
+                    </DropdownMenuItem>
+                    {p.variants.length > 1
+                      ? p.variants.map((v) => (
+                          <DropdownMenuItem key={v.slug} asChild>
+                            <Link
+                              to="/products/$slug/$variant"
+                              params={{ slug: p.slug, variant: v.slug }}
+                              className="cursor-pointer rounded-lg py-1.5 pl-7 pr-3 text-xs text-muted-foreground"
+                            >
+                              {v.label}
+                            </Link>
+                          </DropdownMenuItem>
+                        ))
+                      : null}
+                  </div>
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
@@ -204,6 +219,22 @@ export function Header() {
                       >
                         {p.title}
                       </Link>
+                      {p.variants.length > 1 ? (
+                        <ul className="grid gap-0.5 pl-4">
+                          {p.variants.map((v) => (
+                            <li key={v.slug}>
+                              <Link
+                                to="/products/$slug/$variant"
+                                params={{ slug: p.slug, variant: v.slug }}
+                                onClick={() => setOpen(false)}
+                                className="block rounded-2xl px-4 py-1.5 text-xs text-muted-foreground hover:bg-secondary"
+                              >
+                                {v.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : null}
                     </li>
                   ))}
                 </ul>

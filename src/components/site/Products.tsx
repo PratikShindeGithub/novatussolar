@@ -40,9 +40,15 @@ export function Products() {
                 <p className="mt-2 text-sm text-muted-foreground">{p.description}</p>
                 <ul className="mt-5 space-y-2 border-t border-border pt-5">
                   {p.variants.map((variant) => (
-                    <li key={variant} className="flex items-start gap-2 text-sm">
+                    <li key={variant.slug} className="flex items-start gap-2 text-sm">
                       <span className="mt-1.5 block size-1.5 rounded-full bg-primary" />
-                      <span className="text-foreground/90">{variant}</span>
+                      <Link
+                        to="/products/$slug/$variant"
+                        params={{ slug: p.slug, variant: variant.slug }}
+                        className="text-foreground/90 hover:text-primary"
+                      >
+                        {variant.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>
