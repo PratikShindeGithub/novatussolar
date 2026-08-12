@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { motion, useScroll, useTransform } from "motion/react";
 import { ArrowRight, Calculator, ShieldCheck } from "lucide-react";
-import heroImg from "@/assets/hero-solar.jpg";
+import heroAsset from "@/assets/hero-solar.png.asset.json";
 import { SolarButton } from "./SolarButton";
 
 export function Hero() {
