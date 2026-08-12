@@ -20,7 +20,7 @@ export function FloatingWhatsApp() {
       target="_blank"
       rel="noreferrer"
       aria-label="Chat with Novatussolar on WhatsApp"
-      className="glow-solar fixed right-5 bottom-5 z-50 grid size-14 place-items-center rounded-full bg-primary text-primary-foreground transition-transform hover:scale-110"
+      className="fixed right-5 bottom-5 z-50 grid size-14 place-items-center rounded-full bg-primary text-primary-foreground transition-transform hover:scale-110"
     >
       <MessageCircle className="size-6" />
     </a>

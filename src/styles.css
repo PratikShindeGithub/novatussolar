@@ -206,21 +206,6 @@
   }
 }
 
-@utility glow-solar {
-  box-shadow: 0 0 0 0 color-mix(in oklab, var(--solar) 60%, transparent);
-  animation: solar-pulse 8s ease-in-out infinite;
-}
-
-@keyframes solar-pulse {
-  0%,
-  88%,
-  100% {
-    box-shadow: 0 0 0 0 color-mix(in oklab, var(--solar) 50%, transparent);
-  }
-  94% {
-    box-shadow: 0 0 0 14px transparent;
-  }
-}
 
 @keyframes blob-drift {
   0% {
