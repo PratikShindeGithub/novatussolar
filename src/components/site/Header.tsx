@@ -31,6 +31,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
+  const [expandedVariant, setExpandedVariant] = useState<string | null>(null);
   const [dark, setDark] = useState(false);
   const { location } = useRouterState();
 
