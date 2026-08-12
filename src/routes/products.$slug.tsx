@@ -59,9 +59,15 @@ function Page() {
             </h2>
             <ul className="mt-3 space-y-2">
               {product.variants.map((v) => (
-                <li key={v} className="flex items-start gap-2 text-sm">
+                <li key={v.slug} className="flex items-start gap-2 text-sm">
                   <Check className="mt-0.5 size-4 text-primary" />
-                  <span>{v}</span>
+                  <Link
+                    to="/products/$slug/$variant"
+                    params={{ slug: product.slug, variant: v.slug }}
+                    className="hover:text-primary"
+                  >
+                    {v.label}
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -39,7 +39,7 @@ function buildLines(product: Product): Line[] {
     lines.push({ text: "", size: 11, gap: 10 });
   };
 
-  section("Available options", product.variants);
+  section("Available options", product.variants.map((v) => v.label));
   section("Key highlights", product.highlights);
   section("Typical applications", product.applications);
 

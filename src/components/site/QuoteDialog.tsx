@@ -32,7 +32,7 @@ const schema = z.object({
 export function QuoteDialog({ product, children }: { product: Product; children: ReactNode }) {
   const [open, setOpen] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [variant, setVariant] = useState(product.variants[0]);
+  const [variant, setVariant] = useState(product.variants[0].label);
   const [message, setMessage] = useState("");
 
   const prefill = (v: string) =>
@@ -40,8 +40,8 @@ export function QuoteDialog({ product, children }: { product: Product; children:
 
   useEffect(() => {
     if (open) {
-      setVariant(product.variants[0]);
-      setMessage(prefill(product.variants[0]));
+      setVariant(product.variants[0].label);
+      setMessage(prefill(product.variants[0].label));
       setErrors({});
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -95,8 +95,8 @@ export function QuoteDialog({ product, children }: { product: Product; children:
                 </SelectTrigger>
                 <SelectContent>
                   {product.variants.map((v) => (
-                    <SelectItem key={v} value={v}>
-                      {v}
+                    <SelectItem key={v.slug} value={v.label}>
+                      {v.label}
                     </SelectItem>
                   ))}
                 </SelectContent>
