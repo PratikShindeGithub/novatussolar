@@ -8,7 +8,7 @@ const quickLinks = [
 
 export function TopMenuBar() {
   return (
-    <div className="fixed inset-x-0 top-0 z-[60] hidden border-b border-border/40 bg-card/90 backdrop-blur-md sm:block">
+    <div className="fixed inset-x-0 top-0 z-[60] border-b border-border/40 bg-card/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-1.5 text-xs">
         <div className="flex items-center gap-4 text-muted-foreground">
           <a
