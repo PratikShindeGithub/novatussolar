@@ -112,15 +112,30 @@ export function Header() {
                 </DropdownMenuItem>
                 <hr className="my-1 border-border" />
                 {products.map((p) => (
-                  <DropdownMenuItem key={p.slug} asChild>
-                    <Link
-                      to="/products/$slug"
-                      params={{ slug: p.slug }}
-                      className="cursor-pointer rounded-lg px-3 py-2 text-sm"
-                    >
-                      {p.title}
-                    </Link>
-                  </DropdownMenuItem>
+                  <div key={p.slug}>
+                    <DropdownMenuItem asChild>
+                      <Link
+                        to="/products/$slug"
+                        params={{ slug: p.slug }}
+                        className="cursor-pointer rounded-lg px-3 py-2 text-sm font-medium"
+                      >
+                        {p.title}
+                      </Link>
+                    </DropdownMenuItem>
+                    {p.variants.length > 1
+                      ? p.variants.map((v) => (
+                          <DropdownMenuItem key={v.slug} asChild>
+                            <Link
+                              to="/products/$slug/$variant"
+                              params={{ slug: p.slug, variant: v.slug }}
+                              className="cursor-pointer rounded-lg py-1.5 pl-7 pr-3 text-xs text-muted-foreground"
+                            >
+                              {v.label}
+                            </Link>
+                          </DropdownMenuItem>
+                        ))
+                      : null}
+                  </div>
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
