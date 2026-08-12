@@ -31,6 +31,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
+  const [expandedVariant, setExpandedVariant] = useState<string | null>(null);
   const [dark, setDark] = useState(false);
   const { location } = useRouterState();
 
@@ -211,15 +212,37 @@ export function Header() {
                   </li>
                   {products.map((p) => (
                     <li key={p.slug}>
-                      <Link
-                        to="/products/$slug"
-                        params={{ slug: p.slug }}
-                        onClick={() => setOpen(false)}
-                        className="block rounded-2xl px-4 py-2 text-sm hover:bg-secondary"
-                      >
-                        {p.title}
-                      </Link>
-                      {p.variants.length > 1 ? (
+                      <div className="flex items-center justify-between">
+                        <Link
+                          to="/products/$slug"
+                          params={{ slug: p.slug }}
+                          onClick={() => setOpen(false)}
+                          className="block rounded-2xl px-4 py-2 text-sm hover:bg-secondary"
+                        >
+                          {p.title}
+                        </Link>
+                        {p.variants.length > 1 ? (
+                          <button
+                            type="button"
+                            onClick={() =>
+                              setExpandedVariant((cur) =>
+                                cur === p.slug ? null : p.slug,
+                              )
+                            }
+                            aria-expanded={expandedVariant === p.slug}
+                            aria-label={`Toggle ${p.title} variants`}
+                            className="grid size-8 place-items-center rounded-full hover:bg-secondary"
+                          >
+                            <ChevronDown
+                              className={cn(
+                                "size-4 transition-transform",
+                                expandedVariant === p.slug && "rotate-180",
+                              )}
+                            />
+                          </button>
+                        ) : null}
+                      </div>
+                      {p.variants.length > 1 && expandedVariant === p.slug ? (
                         <ul className="grid gap-0.5 pl-4">
                           {p.variants.map((v) => (
                             <li key={v.slug}>
