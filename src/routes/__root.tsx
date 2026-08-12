@@ -143,6 +143,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <ScrollProgress />
       <BackgroundBlobs />
+      <TopMenuBar />
       <Header />
       <main>
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
