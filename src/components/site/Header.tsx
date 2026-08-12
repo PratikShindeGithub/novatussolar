@@ -1,14 +1,20 @@
-import { Link } from "@tanstack/react-router";
-import { Menu, Moon, Sun, SunMedium, X } from "lucide-react";
+import { Link, useRouterState } from "@tanstack/react-router";
+import { ChevronDown, Menu, Moon, Sun, SunMedium, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { products } from "@/lib/products";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { SolarButton } from "./SolarButton";
 
-const links = [
+const mainLinks = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/solutions", label: "Solar Solutions" },
-  { to: "/products", label: "Products" },
   { to: "/industries", label: "Industries" },
   { to: "/subsidy", label: "Subsidy" },
   { to: "/calculator", label: "Calculator" },
@@ -16,10 +22,17 @@ const links = [
   { to: "/contact", label: "Contact" },
 ] as const;
 
+const productsLinkClass =
+  "rounded-full px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground";
+
+const activeLinkProps = { className: "bg-secondary text-secondary-foreground" };
+
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
   const [dark, setDark] = useState(false);
+  const { location } = useRouterState();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -31,6 +44,10 @@ export function Header() {
   useEffect(() => {
     document.documentElement.classList.toggle("dark", dark);
   }, [dark]);
+
+  const isProductsActive =
+    location.pathname === "/products" ||
+    products.some((p) => location.pathname === `/products/${p.slug}`);
 
   return (
     <header
@@ -56,18 +73,58 @@ export function Header() {
         </Link>
 
         <ul className="hidden items-center gap-1 xl:flex">
-          {links.map((l) => (
+          {mainLinks.map((l) => (
             <li key={l.to}>
               <Link
                 to={l.to}
                 activeOptions={{ exact: l.to === "/" }}
-                activeProps={{ className: "bg-secondary text-secondary-foreground" }}
-                className="rounded-full px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+                activeProps={activeLinkProps}
+                className={productsLinkClass}
               >
                 {l.label}
               </Link>
             </li>
           ))}
+          <li>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button
+                  type="button"
+                  className={cn(
+                    productsLinkClass,
+                    "flex items-center gap-1",
+                    isProductsActive && "bg-secondary text-secondary-foreground",
+                  )}
+                  aria-label="Products menu"
+                >
+                  Products
+                  <ChevronDown className="size-4 transition-transform group-data-[state=open]:rotate-180" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-56 rounded-xl p-2">
+                <DropdownMenuItem asChild>
+                  <Link
+                    to="/products"
+                    className="cursor-pointer rounded-lg px-3 py-2 text-sm font-medium"
+                  >
+                    All Products
+                  </Link>
+                </DropdownMenuItem>
+                <hr className="my-1 border-border" />
+                {products.map((p) => (
+                  <DropdownMenuItem key={p.slug} asChild>
+                    <Link
+                      to="/products/$slug"
+                      params={{ slug: p.slug }}
+                      className="cursor-pointer rounded-lg px-3 py-2 text-sm"
+                    >
+                      {p.title}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </li>
         </ul>
 
         <div className="flex items-center gap-2">
@@ -97,7 +154,7 @@ export function Header() {
       {open ? (
         <div className="glass-card mx-4 mt-3 rounded-3xl p-3 xl:hidden">
           <ul className="grid gap-1">
-            {links.map((l) => (
+            {mainLinks.map((l) => (
               <li key={l.to}>
                 <Link
                   to={l.to}
@@ -108,6 +165,50 @@ export function Header() {
                 </Link>
               </li>
             ))}
+            <li>
+              <button
+                type="button"
+                onClick={() => setProductsOpen((o) => !o)}
+                aria-expanded={productsOpen}
+                className={cn(
+                  "flex w-full items-center justify-between rounded-2xl px-4 py-3 text-sm font-medium hover:bg-secondary",
+                  isProductsActive && "bg-secondary",
+                )}
+              >
+                Products
+                <ChevronDown
+                  className={cn(
+                    "size-4 transition-transform",
+                    productsOpen && "rotate-180",
+                  )}
+                />
+              </button>
+              {productsOpen ? (
+                <ul className="mt-1 grid gap-1 pl-4">
+                  <li>
+                    <Link
+                      to="/products"
+                      onClick={() => setOpen(false)}
+                      className="block rounded-2xl px-4 py-2 text-sm font-medium hover:bg-secondary"
+                    >
+                      All Products
+                    </Link>
+                  </li>
+                  {products.map((p) => (
+                    <li key={p.slug}>
+                      <Link
+                        to="/products/$slug"
+                        params={{ slug: p.slug }}
+                        onClick={() => setOpen(false)}
+                        className="block rounded-2xl px-4 py-2 text-sm hover:bg-secondary"
+                      >
+                        {p.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+            </li>
           </ul>
         </div>
       ) : null}
