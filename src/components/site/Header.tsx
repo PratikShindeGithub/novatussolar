@@ -98,7 +98,7 @@ export function Header() {
                   )}
                   aria-label="Products menu"
                 >
-                  Products
+                  All Products
                   <ChevronDown className="size-4 transition-transform group-data-[state=open]:rotate-180" />
                 </button>
               </DropdownMenuTrigger>
@@ -113,18 +113,43 @@ export function Header() {
                 </DropdownMenuItem>
                 <hr className="my-1 border-border" />
                 {products.map((p) => (
-                  <div key={p.slug}>
-                    <DropdownMenuItem asChild>
-                      <Link
-                        to="/products/$slug"
-                        params={{ slug: p.slug }}
-                        className="cursor-pointer rounded-lg px-3 py-2 text-sm font-medium"
-                      >
-                        {p.title}
-                      </Link>
-                    </DropdownMenuItem>
-                    {p.variants.length > 1
-                      ? p.variants.map((v) => (
+                  <div key={p.slug} className="py-0.5">
+                    <div className="flex items-center justify-between">
+                      <DropdownMenuItem asChild className="flex-1">
+                        <Link
+                          to="/products/$slug"
+                          params={{ slug: p.slug }}
+                          className="cursor-pointer rounded-lg px-3 py-2 text-sm font-medium"
+                        >
+                          {p.title}
+                        </Link>
+                      </DropdownMenuItem>
+                      {p.variants.length > 1 ? (
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            setExpandedVariant((cur) =>
+                              cur === p.slug ? null : p.slug,
+                            );
+                          }}
+                          aria-expanded={expandedVariant === p.slug}
+                          aria-label={`Toggle ${p.title} variants`}
+                          className="grid size-8 place-items-center rounded-full hover:bg-secondary focus-visible:outline-none"
+                        >
+                          <ChevronDown
+                            className={cn(
+                              "size-4 transition-transform",
+                              expandedVariant === p.slug && "rotate-180",
+                            )}
+                          />
+                        </button>
+                      ) : null}
+                    </div>
+                    {p.variants.length > 1 && expandedVariant === p.slug ? (
+                      <div className="pl-3">
+                        {p.variants.map((v) => (
                           <DropdownMenuItem key={v.slug} asChild>
                             <Link
                               to="/products/$slug/$variant"
@@ -134,8 +159,9 @@ export function Header() {
                               {v.label}
                             </Link>
                           </DropdownMenuItem>
-                        ))
-                      : null}
+                        ))}
+                      </div>
+                    ) : null}
                   </div>
                 ))}
               </DropdownMenuContent>
@@ -191,7 +217,7 @@ export function Header() {
                   isProductsActive && "bg-secondary",
                 )}
               >
-                Products
+                All Products
                 <ChevronDown
                   className={cn(
                     "size-4 transition-transform",
