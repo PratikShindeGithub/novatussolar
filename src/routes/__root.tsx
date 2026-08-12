@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/site/Header";
+import { TopMenuBar } from "@/components/site/TopMenuBar";
 import { Footer } from "@/components/site/Footer";
 import { BackgroundBlobs, FloatingWhatsApp, ScrollProgress } from "@/components/site/SiteChrome";
 import { Toaster } from "@/components/ui/sonner";
