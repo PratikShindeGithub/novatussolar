@@ -19,6 +19,7 @@ import { Route as SolutionsRouteImport } from './routes/solutions'
 import { Route as SubsidyRouteImport } from './routes/subsidy'
 import { Route as ProductsIndexRouteImport } from './routes/products.index'
 import { Route as ProductsSlugRouteImport } from './routes/products.$slug'
+import { Route as ProductsSlugVariantRouteImport } from './routes/products.$slug.$variant'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -70,6 +71,11 @@ const ProductsSlugRoute = ProductsSlugRouteImport.update({
   path: '/products/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductsSlugVariantRoute = ProductsSlugVariantRouteImport.update({
+  id: '/$variant',
+  path: '/$variant',
+  getParentRoute: () => ProductsSlugRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -80,8 +86,9 @@ export interface FileRoutesByFullPath {
   '/industries': typeof IndustriesRoute
   '/solutions': typeof SolutionsRoute
   '/subsidy': typeof SubsidyRoute
-  '/products/$slug': typeof ProductsSlugRoute
+  '/products/$slug': typeof ProductsSlugRouteWithChildren
   '/products/': typeof ProductsIndexRoute
+  '/products/$slug/$variant': typeof ProductsSlugVariantRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -92,8 +99,9 @@ export interface FileRoutesByTo {
   '/industries': typeof IndustriesRoute
   '/solutions': typeof SolutionsRoute
   '/subsidy': typeof SubsidyRoute
-  '/products/$slug': typeof ProductsSlugRoute
+  '/products/$slug': typeof ProductsSlugRouteWithChildren
   '/products': typeof ProductsIndexRoute
+  '/products/$slug/$variant': typeof ProductsSlugVariantRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -105,8 +113,9 @@ export interface FileRoutesById {
   '/industries': typeof IndustriesRoute
   '/solutions': typeof SolutionsRoute
   '/subsidy': typeof SubsidyRoute
-  '/products/$slug': typeof ProductsSlugRoute
+  '/products/$slug': typeof ProductsSlugRouteWithChildren
   '/products/': typeof ProductsIndexRoute
+  '/products/$slug/$variant': typeof ProductsSlugVariantRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -121,6 +130,7 @@ export interface FileRouteTypes {
     | '/subsidy'
     | '/products/$slug'
     | '/products/'
+    | '/products/$slug/$variant'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -133,6 +143,7 @@ export interface FileRouteTypes {
     | '/subsidy'
     | '/products/$slug'
     | '/products'
+    | '/products/$slug/$variant'
   id:
     | '__root__'
     | '/'
@@ -145,6 +156,7 @@ export interface FileRouteTypes {
     | '/subsidy'
     | '/products/$slug'
     | '/products/'
+    | '/products/$slug/$variant'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -156,7 +168,7 @@ export interface RootRouteChildren {
   IndustriesRoute: typeof IndustriesRoute
   SolutionsRoute: typeof SolutionsRoute
   SubsidyRoute: typeof SubsidyRoute
-  ProductsSlugRoute: typeof ProductsSlugRoute
+  ProductsSlugRoute: typeof ProductsSlugRouteWithChildren
   ProductsIndexRoute: typeof ProductsIndexRoute
 }
 
@@ -232,8 +244,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/products/$slug/$variant': {
+      id: '/products/$slug/$variant'
+      path: '/$variant'
+      fullPath: '/products/$slug/$variant'
+      preLoaderRoute: typeof ProductsSlugVariantRouteImport
+      parentRoute: typeof ProductsSlugRoute
+    }
   }
 }
+
+interface ProductsSlugRouteChildren {
+  ProductsSlugVariantRoute: typeof ProductsSlugVariantRoute
+}
+
+const ProductsSlugRouteChildren: ProductsSlugRouteChildren = {
+  ProductsSlugVariantRoute: ProductsSlugVariantRoute,
+}
+
+const ProductsSlugRouteWithChildren = ProductsSlugRoute._addFileChildren(
+  ProductsSlugRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -244,7 +275,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndustriesRoute: IndustriesRoute,
   SolutionsRoute: SolutionsRoute,
   SubsidyRoute: SubsidyRoute,
-  ProductsSlugRoute: ProductsSlugRoute,
+  ProductsSlugRoute: ProductsSlugRouteWithChildren,
   ProductsIndexRoute: ProductsIndexRoute,
 }
 export const routeTree = rootRouteImport
