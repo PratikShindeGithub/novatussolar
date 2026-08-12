@@ -17,7 +17,7 @@ export function CtaSection() {
           </p>
           <div className="relative mt-10 flex flex-wrap justify-center gap-4">
             <Link to="/contact">
-              <SolarButton size="lg" className="glow-solar">
+              <SolarButton size="lg">
                 Book Free Site Visit
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
               </SolarButton>

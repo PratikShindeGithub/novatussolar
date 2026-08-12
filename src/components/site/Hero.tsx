@@ -73,7 +73,7 @@ export function Hero() {
           className="mt-10 flex flex-wrap gap-4"
         >
           <Link to="/contact">
-            <SolarButton size="lg" className="glow-solar">
+            <SolarButton size="lg">
               Get Free Solar Consultation
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
             </SolarButton>
