@@ -21,7 +21,7 @@ function Page() {
   return (
     <>
       <section className="mx-auto max-w-7xl px-5 pt-40 pb-6 text-center">
-        <h1 className="text-4xl font-semibold text-balance sm:text-6xl">Solar Products</h1>
+        <h1 className="text-4xl font-semibold text-balance sm:text-6xl">All Products</h1>
         <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
           Quality solar water heaters, collectors and panels for residential, commercial and industrial installations across Pune.
         </p>
