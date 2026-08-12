@@ -101,7 +101,7 @@ export function Header() {
                   <ChevronDown className="size-4 transition-transform group-data-[state=open]:rotate-180" />
                 </button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="w-56 rounded-xl p-2">
+              <DropdownMenuContent align="start" className="w-72 rounded-xl p-2">
                 <DropdownMenuItem asChild>
                   <Link
                     to="/products"
@@ -219,6 +219,22 @@ export function Header() {
                       >
                         {p.title}
                       </Link>
+                      {p.variants.length > 1 ? (
+                        <ul className="grid gap-0.5 pl-4">
+                          {p.variants.map((v) => (
+                            <li key={v.slug}>
+                              <Link
+                                to="/products/$slug/$variant"
+                                params={{ slug: p.slug, variant: v.slug }}
+                                onClick={() => setOpen(false)}
+                                className="block rounded-2xl px-4 py-1.5 text-xs text-muted-foreground hover:bg-secondary"
+                              >
+                                {v.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : null}
                     </li>
                   ))}
                 </ul>
