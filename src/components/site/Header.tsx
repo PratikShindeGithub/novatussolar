@@ -53,7 +53,7 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-8 z-50 transition-all duration-500",
+        "fixed inset-x-0 top-0 z-50 transition-all duration-500",
         scrolled ? "glass-card border-x-0 border-t-0 py-2" : "border-transparent py-4",
       )}
     >
