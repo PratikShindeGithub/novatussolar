@@ -13,8 +13,8 @@ export function Hero() {
   return (
     <section className="relative flex min-h-dvh items-center overflow-hidden">
       <motion.img
-        src={heroImg}
-        alt="Solar engineers inspecting a photovoltaic array under a clear blue sky"
+        src={heroAsset.url}
+        alt="Rooftop solar panels at sunset"
         width={1920}
         height={1088}
         style={{ y, scale }}
