@@ -13,10 +13,10 @@ import { SolarButton } from "./SolarButton";
 
 const mainLinks = [
   { to: "/", label: "Home" },
-  { to: "/solutions", label: "Solar Solutions" },
+  { to: "/solutions", label: "Solutions" },
   { to: "/industries", label: "Industries" },
-  { to: "/subsidy", label: "Subsidy" },
-  { to: "/calculator", label: "Calculator" },
+  { to: "/subsidy", label: "" },
+  { to: "/calculator", label: "" },
   { to: "/blog", label: "Blog" },
   { to: "/contact", label: "Contact" },
 ] as const;
@@ -127,7 +127,7 @@ export function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
           </li>
-          {mainLinks.slice(1).map((l) => (
+          {mainLinks.slice(1).map((l) => l.label && (
             <li key={l.to}>
               <Link
                 to={l.to}
@@ -293,7 +293,7 @@ export function Header() {
                 </ul>
               ) : null}
             </li>
-            {mainLinks.slice(1).map((l) => (
+            {mainLinks.slice(1).map((l) => l.label && (
               <li key={l.to}>
                 <Link
                   to={l.to}
