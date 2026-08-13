@@ -16,10 +16,10 @@ const groups = [
   {
     title: "Services",
     items: [
-      { label: "Residential Rooftop", to: "/solutions" },
-      { label: "Commercial Solar", to: "/solutions" },
-      { label: "Industrial Plants", to: "/solutions" },
-      { label: "Solar AMC & Cleaning", to: "/solutions" },
+      { label: "Residential Rooftop", to: "/products" },
+      { label: "Commercial Solar", to: "/products" },
+      { label: "Industrial Plants", to: "/industries" },
+      { label: "Solar AMC & Cleaning", to: "/contact" },
     ],
   },
   {
