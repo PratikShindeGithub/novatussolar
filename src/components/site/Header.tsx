@@ -21,11 +21,11 @@ const mainLinks = [
   { to: "/contact", label: "Contact" },
 ] as const;
 
-const aboutItems = [
+const aboutItems: Array<{ to: "/about"; hash?: string; label: string }> = [
   { to: "/about", label: "About Us" },
   { to: "/about", hash: "vision-mission", label: "Vision & Mission" },
   { to: "/about", hash: "office-address", label: "Office Address" },
-] as const;
+];
 
 const productsLinkClass =
   "rounded-full px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground";
