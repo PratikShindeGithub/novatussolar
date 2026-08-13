@@ -293,7 +293,7 @@ export function Header() {
                 </ul>
               ) : null}
             </li>
-            {mainLinks.slice(1).map((l) => (
+            {mainLinks.slice(1).map((l) => l.label && (
               <li key={l.to}>
                 <Link
                   to={l.to}
