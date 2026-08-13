@@ -21,18 +21,6 @@ export function Hero() {
         className="absolute inset-0 size-full object-cover"
       />
       <div className="gradient-hero absolute inset-0 opacity-60 mix-blend-multiply" />
-      <motion.div
-        aria-hidden
-        className="absolute inset-0 bg-[radial-gradient(circle_at_18%_22%,color-mix(in_oklab,var(--primary)_55%,transparent),transparent_50%)]"
-        animate={{ opacity: [0.5, 0.9, 0.5] }}
-        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        aria-hidden
-        className="absolute top-1/4 h-24 w-[45%] bg-white/10 blur-3xl"
-        animate={{ x: ["-20%", "120%"] }}
-        transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
-      />
 
       <motion.div
         style={{ opacity: fade }}
