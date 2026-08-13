@@ -28,9 +28,10 @@ const aboutItems: Array<{ to: "/about"; hash?: string; label: string }> = [
 ];
 
 const productsLinkClass =
-  "rounded-full px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground";
+  "rounded-md px-3 py-2 text-[15px] font-bold tracking-wide text-background/85 transition-colors hover:text-background";
 
-const activeLinkProps = { className: "bg-secondary text-secondary-foreground" };
+const activeLinkProps = { className: "text-background" };
+
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
