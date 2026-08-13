@@ -104,7 +104,7 @@ export function Header() {
                   className={cn(
                     productsLinkClass,
                     "flex items-center gap-1",
-                    isAboutActive && "bg-secondary text-secondary-foreground",
+                    isAboutActive && "text-background",
                   )}
                   aria-label="About menu"
                 >
@@ -147,7 +147,7 @@ export function Header() {
                   className={cn(
                     productsLinkClass,
                     "flex items-center gap-1",
-                    isProductsActive && "bg-secondary text-secondary-foreground",
+                    isProductsActive && "text-background",
                   )}
                   aria-label="Products menu"
                 >
@@ -227,7 +227,7 @@ export function Header() {
             type="button"
             aria-label={dark ? "Switch to light theme" : "Switch to dark theme"}
             onClick={() => setDark((d) => !d)}
-            className="grid size-11 place-items-center rounded-full border border-border bg-card/70 text-foreground transition-colors hover:bg-secondary"
+            className="grid size-11 place-items-center rounded-full border border-background/25 text-background transition-colors hover:bg-background/10"
           >
             {dark ? <Sun className="size-4" /> : <Moon className="size-4" />}
           </button>
@@ -239,7 +239,7 @@ export function Header() {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((o) => !o)}
-            className="grid size-11 place-items-center rounded-full border border-border bg-card/70 xl:hidden"
+            className="grid size-11 place-items-center rounded-full border border-background/25 text-background xl:hidden"
           >
             {open ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
