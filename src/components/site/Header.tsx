@@ -13,7 +13,6 @@ import { SolarButton } from "./SolarButton";
 
 const mainLinks = [
   { to: "/", label: "Home" },
-  { to: "/solutions", label: "Solutions" },
   { to: "/industries", label: "Industries" },
   { to: "/subsidy", label: "" },
   { to: "/calculator", label: "" },
