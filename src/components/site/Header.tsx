@@ -62,8 +62,8 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-xl transition-all duration-500",
-        scrolled ? "py-2 shadow-md" : "py-4 shadow-sm",
+        "fixed inset-x-0 top-0 z-50 bg-foreground/85 backdrop-blur-xl transition-all duration-500",
+        scrolled ? "py-2 shadow-lg" : "py-4",
       )}
     >
       <nav
@@ -74,13 +74,16 @@ export function Header() {
           <span className="grid size-10 place-items-center rounded-2xl bg-primary text-primary-foreground">
             <SunMedium className="size-5" />
           </span>
-          <span className="leading-tight">
-            <span className="block font-display text-lg font-semibold">Novatussolar</span>
-            <span className="block text-[11px] tracking-wide text-muted-foreground">
-              Smart Solar Energy
+          <span className="leading-tight text-background">
+            <span className="block font-display text-xl font-extrabold uppercase tracking-[0.18em]">
+              Novatussolar
+            </span>
+            <span className="block text-[11px] tracking-[0.35em] text-background/70">
+              SMART SOLAR
             </span>
           </span>
         </Link>
+
 
         <ul className="hidden items-center gap-1 xl:flex">
           <li>
