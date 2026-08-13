@@ -28,9 +28,10 @@ const aboutItems: Array<{ to: "/about"; hash?: string; label: string }> = [
 ];
 
 const productsLinkClass =
-  "rounded-full px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground";
+  "rounded-md px-3 py-2 text-[15px] font-bold tracking-wide text-background/85 transition-colors hover:text-background";
 
-const activeLinkProps = { className: "bg-secondary text-secondary-foreground" };
+const activeLinkProps = { className: "text-background" };
+
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -61,8 +62,8 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-xl transition-all duration-500",
-        scrolled ? "py-2 shadow-md" : "py-4 shadow-sm",
+        "fixed inset-x-0 top-0 z-50 bg-foreground/85 backdrop-blur-xl transition-all duration-500",
+        scrolled ? "py-2 shadow-lg" : "py-4",
       )}
     >
       <nav
@@ -73,13 +74,16 @@ export function Header() {
           <span className="grid size-10 place-items-center rounded-2xl bg-primary text-primary-foreground">
             <SunMedium className="size-5" />
           </span>
-          <span className="leading-tight">
-            <span className="block font-display text-lg font-semibold">Novatussolar</span>
-            <span className="block text-[11px] tracking-wide text-muted-foreground">
-              Smart Solar Energy
+          <span className="leading-tight text-background">
+            <span className="block font-display text-xl font-extrabold uppercase tracking-[0.18em]">
+              Novatussolar
+            </span>
+            <span className="block text-[11px] tracking-[0.35em] text-background/70">
+              SMART SOLAR
             </span>
           </span>
         </Link>
+
 
         <ul className="hidden items-center gap-1 xl:flex">
           <li>
@@ -100,7 +104,7 @@ export function Header() {
                   className={cn(
                     productsLinkClass,
                     "flex items-center gap-1",
-                    isAboutActive && "bg-secondary text-secondary-foreground",
+                    isAboutActive && "text-background",
                   )}
                   aria-label="About menu"
                 >
@@ -143,7 +147,7 @@ export function Header() {
                   className={cn(
                     productsLinkClass,
                     "flex items-center gap-1",
-                    isProductsActive && "bg-secondary text-secondary-foreground",
+                    isProductsActive && "text-background",
                   )}
                   aria-label="Products menu"
                 >
@@ -223,7 +227,7 @@ export function Header() {
             type="button"
             aria-label={dark ? "Switch to light theme" : "Switch to dark theme"}
             onClick={() => setDark((d) => !d)}
-            className="grid size-11 place-items-center rounded-full border border-border bg-card/70 text-foreground transition-colors hover:bg-secondary"
+            className="grid size-11 place-items-center rounded-full border border-background/25 text-background transition-colors hover:bg-background/10"
           >
             {dark ? <Sun className="size-4" /> : <Moon className="size-4" />}
           </button>
@@ -235,7 +239,7 @@ export function Header() {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((o) => !o)}
-            className="grid size-11 place-items-center rounded-full border border-border bg-card/70 xl:hidden"
+            className="grid size-11 place-items-center rounded-full border border-background/25 text-background xl:hidden"
           >
             {open ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
