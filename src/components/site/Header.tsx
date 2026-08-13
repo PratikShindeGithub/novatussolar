@@ -275,9 +275,10 @@ export function Header() {
               {aboutOpen ? (
                 <ul className="mt-1 grid gap-1 pl-4">
                   {aboutItems.map((item) => (
-                    <li key={item.to}>
+                    <li key={item.label}>
                       <Link
                         to={item.to}
+                        hash={item.hash}
                         onClick={() => setOpen(false)}
                         className="block rounded-2xl px-4 py-2 text-sm font-medium hover:bg-secondary"
                       >
