@@ -110,9 +110,10 @@ export function Header() {
               </DropdownMenuTrigger>
               <DropdownMenuContent align="start" className="w-56 rounded-xl p-2">
                 {aboutItems.map((item) => (
-                  <DropdownMenuItem key={item.to} asChild>
+                  <DropdownMenuItem key={item.label} asChild>
                     <Link
                       to={item.to}
+                      hash={item.hash}
                       className="cursor-pointer rounded-lg px-3 py-2 text-sm font-medium"
                     >
                       {item.label}
