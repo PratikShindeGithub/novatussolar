@@ -61,8 +61,8 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-500",
-        scrolled ? "glass-card border-x-0 border-t-0 py-2" : "border-transparent py-4",
+        "fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-xl transition-all duration-500",
+        scrolled ? "py-2 shadow-md" : "py-4 shadow-sm",
       )}
     >
       <nav
