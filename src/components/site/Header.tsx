@@ -23,8 +23,8 @@ const mainLinks = [
 
 const aboutItems = [
   { to: "/about", label: "About Us" },
-  { to: "/about#vision-mission", label: "Vision & Mission" },
-  { to: "/about#office-address", label: "Office Address" },
+  { to: "/about", hash: "vision-mission", label: "Vision & Mission" },
+  { to: "/about", hash: "office-address", label: "Office Address" },
 ] as const;
 
 const productsLinkClass =
