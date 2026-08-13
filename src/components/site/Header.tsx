@@ -13,10 +13,10 @@ import { SolarButton } from "./SolarButton";
 
 const mainLinks = [
   { to: "/", label: "Home" },
-  { to: "/solutions", label: "Solar Solutions" },
+  { to: "/solutions", label: "Solutions" },
   { to: "/industries", label: "Industries" },
-  { to: "/subsidy", label: "Subsidy" },
-  { to: "/calculator", label: "Calculator" },
+  { to: "/subsidy", label: "" },
+  { to: "/calculator", label: "" },
   { to: "/blog", label: "Blog" },
   { to: "/contact", label: "Contact" },
 ] as const;
