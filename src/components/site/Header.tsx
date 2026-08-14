@@ -260,52 +260,6 @@ export function Header() {
             <li>
               <button
                 type="button"
-                onClick={() => setAboutOpen((o) => !o)}
-                aria-expanded={aboutOpen}
-                className={cn(
-                  "flex w-full items-center justify-between rounded-2xl px-4 py-3 text-sm font-medium hover:bg-secondary",
-                  isAboutActive && "bg-secondary",
-                )}
-              >
-                About
-                <ChevronDown
-                  className={cn(
-                    "size-4 transition-transform",
-                    aboutOpen && "rotate-180",
-                  )}
-                />
-              </button>
-              {aboutOpen ? (
-                <ul className="mt-1 grid gap-1 pl-4">
-                  {aboutItems.map((item) => (
-                    <li key={item.label}>
-                      <Link
-                        to={item.to}
-                        hash={item.hash}
-                        onClick={() => setOpen(false)}
-                        className="block rounded-2xl px-4 py-2 text-sm font-medium hover:bg-secondary"
-                      >
-                        {item.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              ) : null}
-            </li>
-            {mainLinks.slice(1).map((l) => l.label && (
-              <li key={l.to}>
-                <Link
-                  to={l.to}
-                  onClick={() => setOpen(false)}
-                  className="block rounded-2xl px-4 py-3 text-sm font-medium hover:bg-secondary"
-                >
-                  {l.label}
-                </Link>
-              </li>
-            ))}
-            <li>
-              <button
-                type="button"
                 onClick={() => setProductsOpen((o) => !o)}
                 aria-expanded={productsOpen}
                 className={cn(
@@ -385,6 +339,52 @@ export function Header() {
                 </ul>
               ) : null}
             </li>
+            <li>
+              <button
+                type="button"
+                onClick={() => setAboutOpen((o) => !o)}
+                aria-expanded={aboutOpen}
+                className={cn(
+                  "flex w-full items-center justify-between rounded-2xl px-4 py-3 text-sm font-medium hover:bg-secondary",
+                  isAboutActive && "bg-secondary",
+                )}
+              >
+                About
+                <ChevronDown
+                  className={cn(
+                    "size-4 transition-transform",
+                    aboutOpen && "rotate-180",
+                  )}
+                />
+              </button>
+              {aboutOpen ? (
+                <ul className="mt-1 grid gap-1 pl-4">
+                  {aboutItems.map((item) => (
+                    <li key={item.label}>
+                      <Link
+                        to={item.to}
+                        hash={item.hash}
+                        onClick={() => setOpen(false)}
+                        className="block rounded-2xl px-4 py-2 text-sm font-medium hover:bg-secondary"
+                      >
+                        {item.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+            </li>
+            {mainLinks.slice(1).map((l) => l.label && (
+              <li key={l.to}>
+                <Link
+                  to={l.to}
+                  onClick={() => setOpen(false)}
+                  className="block rounded-2xl px-4 py-3 text-sm font-medium hover:bg-secondary"
+                >
+                  {l.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       ) : null}
