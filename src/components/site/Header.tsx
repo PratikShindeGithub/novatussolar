@@ -127,7 +127,7 @@ export function Header() {
                       {p.variants.length > 1 ? (
                         <button
                           type="button"
-                          onSelect={undefined}
+                          
                           onClick={(e) => {
                             e.preventDefault();
                             e.stopPropagation();
