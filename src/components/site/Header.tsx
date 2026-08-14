@@ -300,14 +300,6 @@ export function Header() {
                   {products.map((p) => (
                     <li key={p.slug}>
                       <div className="flex items-center justify-between">
-                        <Link
-                          to="/products/$slug"
-                          params={{ slug: p.slug }}
-                          onClick={() => setOpen(false)}
-                          className="block rounded-2xl px-4 py-2 text-sm hover:bg-secondary"
-                        >
-                          {p.title}
-                        </Link>
                         {p.variants.length > 1 ? (
                           <button
                             type="button"
@@ -317,9 +309,9 @@ export function Header() {
                               )
                             }
                             aria-expanded={expandedVariant === p.slug}
-                            aria-label={`Toggle ${p.title} variants`}
-                            className="grid size-8 place-items-center rounded-full hover:bg-secondary"
+                            className="flex w-full items-center justify-between rounded-2xl px-4 py-2 text-left text-sm hover:bg-secondary"
                           >
+                            {p.title}
                             <ChevronDown
                               className={cn(
                                 "size-4 transition-transform",
@@ -327,10 +319,29 @@ export function Header() {
                               )}
                             />
                           </button>
-                        ) : null}
+                        ) : (
+                          <Link
+                            to="/products/$slug"
+                            params={{ slug: p.slug }}
+                            onClick={() => setOpen(false)}
+                            className="block rounded-2xl px-4 py-2 text-sm hover:bg-secondary"
+                          >
+                            {p.title}
+                          </Link>
+                        )}
                       </div>
                       {p.variants.length > 1 && expandedVariant === p.slug ? (
                         <ul className="grid gap-0.5 pl-4">
+                          <li>
+                            <Link
+                              to="/products/$slug"
+                              params={{ slug: p.slug }}
+                              onClick={() => setOpen(false)}
+                              className="block rounded-2xl px-4 py-1.5 text-xs font-medium hover:bg-secondary"
+                            >
+                              View {p.title}
+                            </Link>
+                          </li>
                           {p.variants.map((v) => (
                             <li key={v.slug}>
                               <Link
