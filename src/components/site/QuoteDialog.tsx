@@ -29,10 +29,21 @@ const schema = z.object({
   message: z.string().trim().min(5, "Tell us a little about your requirement").max(800),
 });
 
-export function QuoteDialog({ product, children }: { product: Product; children: ReactNode }) {
+export function QuoteDialog({
+  product,
+  variantSlug,
+  children,
+}: {
+  product: Product;
+  /** preselects (and prefills) a specific sub-product option */
+  variantSlug?: string;
+  children: ReactNode;
+}) {
+  const initial =
+    product.variants.find((v) => v.slug === variantSlug)?.label ?? product.variants[0].label;
   const [open, setOpen] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [variant, setVariant] = useState(product.variants[0].label);
+  const [variant, setVariant] = useState(initial);
   const [message, setMessage] = useState("");
 
   const prefill = (v: string) =>
@@ -40,12 +51,12 @@ export function QuoteDialog({ product, children }: { product: Product; children:
 
   useEffect(() => {
     if (open) {
-      setVariant(product.variants[0].label);
-      setMessage(prefill(product.variants[0].label));
+      setVariant(initial);
+      setMessage(prefill(initial));
       setErrors({});
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [open, product.slug]);
+  }, [open, product.slug, variantSlug]);
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>

@@ -38,11 +38,11 @@ export function SubProductCard({
         ) : null}
         <p className="mt-2 text-sm text-muted-foreground">{variant.description}</p>
         <div className="mt-auto flex flex-wrap gap-3 pt-6">
-          <SolarButton asChild magnetic={false}>
-            <Link to="/products/$slug/$variant" params={{ slug: product.slug, variant: variant.slug }}>
+          <Link to="/products/$slug/$variant" params={{ slug: product.slug, variant: variant.slug }}>
+            <SolarButton magnetic={false}>
               View Details <ArrowRight className="size-4" />
-            </Link>
-          </SolarButton>
+            </SolarButton>
+          </Link>
           <QuoteDialog product={product} variantSlug={variant.slug}>
             <SolarButton variant="outline" magnetic={false} aria-label={`Enquire about ${variant.name}`}>
               <FileText className="size-4" /> Enquire Now
