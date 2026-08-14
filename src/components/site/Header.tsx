@@ -103,49 +103,6 @@ export function Header() {
                   className={cn(
                     productsLinkClass,
                     "flex items-center gap-1",
-                    isAboutActive && "text-background",
-                  )}
-                  aria-label="About menu"
-                >
-                  About
-                  <ChevronDown className="size-4 transition-transform group-data-[state=open]:rotate-180" />
-                </button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="w-56 rounded-xl p-2">
-                {aboutItems.map((item) => (
-                  <DropdownMenuItem key={item.label} asChild>
-                    <Link
-                      to={item.to}
-                      hash={item.hash}
-                      className="cursor-pointer rounded-lg px-3 py-2 text-sm font-medium"
-                    >
-                      {item.label}
-                    </Link>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </li>
-          {mainLinks.slice(1).map((l) => l.label && (
-            <li key={l.to}>
-              <Link
-                to={l.to}
-                activeOptions={{ exact: l.to === "/" }}
-                activeProps={activeLinkProps}
-                className={productsLinkClass}
-              >
-                {l.label}
-              </Link>
-            </li>
-          ))}
-          <li>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <button
-                  type="button"
-                  className={cn(
-                    productsLinkClass,
-                    "flex items-center gap-1",
                     isProductsActive && "text-background",
                   )}
                   aria-label="Products menu"
@@ -219,6 +176,49 @@ export function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
           </li>
+          <li>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button
+                  type="button"
+                  className={cn(
+                    productsLinkClass,
+                    "flex items-center gap-1",
+                    isAboutActive && "text-background",
+                  )}
+                  aria-label="About menu"
+                >
+                  About
+                  <ChevronDown className="size-4 transition-transform group-data-[state=open]:rotate-180" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-56 rounded-xl p-2">
+                {aboutItems.map((item) => (
+                  <DropdownMenuItem key={item.label} asChild>
+                    <Link
+                      to={item.to}
+                      hash={item.hash}
+                      className="cursor-pointer rounded-lg px-3 py-2 text-sm font-medium"
+                    >
+                      {item.label}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </li>
+          {mainLinks.slice(1).map((l) => l.label && (
+            <li key={l.to}>
+              <Link
+                to={l.to}
+                activeOptions={{ exact: l.to === "/" }}
+                activeProps={activeLinkProps}
+                className={productsLinkClass}
+              >
+                {l.label}
+              </Link>
+            </li>
+          ))}
         </ul>
 
         <div className="flex items-center gap-2">
