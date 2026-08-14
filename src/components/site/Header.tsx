@@ -124,18 +124,10 @@ export function Header() {
                 {products.map((p) => (
                   <div key={p.slug} className="py-0.5">
                     <div className="flex items-center justify-between">
-                      <DropdownMenuItem asChild className="flex-1">
-                        <Link
-                          to="/products/$slug"
-                          params={{ slug: p.slug }}
-                          className="cursor-pointer rounded-lg px-3 py-2 text-sm font-medium"
-                        >
-                          {p.title}
-                        </Link>
-                      </DropdownMenuItem>
                       {p.variants.length > 1 ? (
                         <button
                           type="button"
+                          onSelect={undefined}
                           onClick={(e) => {
                             e.preventDefault();
                             e.stopPropagation();
@@ -144,9 +136,9 @@ export function Header() {
                             );
                           }}
                           aria-expanded={expandedVariant === p.slug}
-                          aria-label={`Toggle ${p.title} variants`}
-                          className="grid size-8 place-items-center rounded-full hover:bg-secondary focus-visible:outline-none"
+                          className="flex flex-1 items-center justify-between rounded-lg px-3 py-2 text-left text-sm font-medium hover:bg-secondary focus-visible:outline-none"
                         >
+                          {p.title}
                           <ChevronDown
                             className={cn(
                               "size-4 transition-transform",
@@ -154,10 +146,29 @@ export function Header() {
                             )}
                           />
                         </button>
-                      ) : null}
+                      ) : (
+                        <DropdownMenuItem asChild className="flex-1">
+                          <Link
+                            to="/products/$slug"
+                            params={{ slug: p.slug }}
+                            className="cursor-pointer rounded-lg px-3 py-2 text-sm font-medium"
+                          >
+                            {p.title}
+                          </Link>
+                        </DropdownMenuItem>
+                      )}
                     </div>
                     {p.variants.length > 1 && expandedVariant === p.slug ? (
                       <div className="pl-3">
+                        <DropdownMenuItem asChild>
+                          <Link
+                            to="/products/$slug"
+                            params={{ slug: p.slug }}
+                            className="cursor-pointer rounded-lg py-1.5 pl-7 pr-3 text-xs font-medium"
+                          >
+                            View {p.title}
+                          </Link>
+                        </DropdownMenuItem>
                         {p.variants.map((v) => (
                           <DropdownMenuItem key={v.slug} asChild>
                             <Link
