@@ -1,10 +1,9 @@
-import { Download, FileText } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Reveal, SectionHeading } from "./Reveal";
 import { QuoteDialog } from "./QuoteDialog";
 import { SolarButton } from "./SolarButton";
 import { products } from "@/lib/products";
-import { downloadBrochure } from "@/lib/brochure";
 
 export function Products() {
   return (
@@ -21,7 +20,7 @@ export function Products() {
               <div className="overflow-hidden">
                 <img
                   src={p.img}
-                  alt={p.title}
+                  alt={`${p.title} supplied and installed by Novatussolar in Pune`}
                   loading="lazy"
                   width={1024}
                   height={768}
@@ -38,34 +37,21 @@ export function Products() {
                   </Link>
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground">{p.description}</p>
-                <ul className="mt-5 space-y-2 border-t border-border pt-5">
-                  {p.variants.map((variant) => (
-                    <li key={variant.slug} className="flex items-start gap-2 text-sm">
-                      <span className="mt-1.5 block size-1.5 rounded-full bg-primary" />
-                      <Link
-                        to="/products/$slug/$variant"
-                        params={{ slug: p.slug, variant: variant.slug }}
-                        className="text-foreground/90 hover:text-primary"
-                      >
-                        {variant.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
                 <div className="mt-auto flex flex-wrap gap-3 pt-6">
+                  <Link to="/products/$slug" params={{ slug: p.slug }}>
+                    <SolarButton magnetic={false} aria-label={`View details for ${p.title}`}>
+                      View Details <ArrowRight className="size-4" />
+                    </SolarButton>
+                  </Link>
                   <QuoteDialog product={p}>
-                    <SolarButton magnetic={false} aria-label={`Request a quote for ${p.title}`}>
-                      <FileText className="size-4" /> Request a quote
+                    <SolarButton
+                      variant="outline"
+                      magnetic={false}
+                      aria-label={`Request a quote for ${p.title}`}
+                    >
+                      <FileText className="size-4" /> Request a Quote
                     </SolarButton>
                   </QuoteDialog>
-                  <SolarButton
-                    variant="outline"
-                    magnetic={false}
-                    onClick={() => downloadBrochure(p)}
-                    aria-label={`Download the ${p.title} brochure`}
-                  >
-                    <Download className="size-4" /> Brochure
-                  </SolarButton>
                 </div>
               </div>
             </article>
