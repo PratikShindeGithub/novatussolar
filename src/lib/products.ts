@@ -1,7 +1,5 @@
 import { Droplets, Flame, Layers, Sun, Thermometer, type LucideIcon } from "lucide-react";
-import residentialImg from "@/assets/residential.jpg";
 import industrialImg from "@/assets/industrial.jpg";
-import commercialImg from "@/assets/commercial.jpg";
 import etcWaterHeaterImg from "@/assets/etc-water-heater.jpeg.asset.json";
 import flatPlateCollectorImg from "@/assets/flat-plate-collector.jpeg.asset.json";
 import fpcSolarWaterHeaterImg from "@/assets/fpc-solar-water-heater.png.asset.json";
