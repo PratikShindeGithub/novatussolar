@@ -110,7 +110,7 @@ export const products: Product[] = [
     description: "High-absorption vacuum tubes that deliver hot water even on cloudy Pune days.",
     detail:
       "Evacuated tube collectors use vacuum insulated borosilicate tubes to trap heat with minimal loss, so they keep performing in diffused light and low ambient temperatures. Tubes are individually replaceable, which makes them ideal for retrofits and long-life commercial hot water loops.",
-    img: commercialImg,
+    img: evacuatedTubeImg.url,
     variants: [
       {
         slug: "standard",
@@ -199,7 +199,7 @@ export const products: Product[] = [
     description: "Durable flat-plate absorbers for high-pressure plumbing and commercial hot water.",
     detail:
       "Flat plate collectors use a copper riser and header absorber under toughened glass glazing. The rugged build handles pressurised plumbing lines and continuous rooftop exposure, which makes them the preferred choice for hotels, high-rises and industrial hot water.",
-    img: commercialImg,
+    img: flatPlateCollectorImg.url,
     variants: [
       {
         slug: "standard",
@@ -233,7 +233,7 @@ export const products: Product[] = [
     description: "Flat-plate collector based systems built for pressurised and non-pressurised needs.",
     detail:
       "FPC solar water heaters combine flat plate collectors with pressurised or non-pressurised storage, scaling from a 100 L home system to a 5000 L bulk installation. Optional electric backup keeps supply steady through long monsoon spells.",
-    img: residentialImg,
+    img: fpcSolarWaterHeaterImg.url,
     variants: [
       {
         slug: "pressurised-tank",
