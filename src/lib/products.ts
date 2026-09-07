@@ -1,7 +1,9 @@
 import { Droplets, Flame, Layers, Sun, Thermometer, type LucideIcon } from "lucide-react";
-import residentialImg from "@/assets/residential.jpg";
 import industrialImg from "@/assets/industrial.jpg";
-import commercialImg from "@/assets/commercial.jpg";
+import etcWaterHeaterImg from "@/assets/etc-water-heater.jpeg.asset.json";
+import flatPlateCollectorImg from "@/assets/flat-plate-collector.jpeg.asset.json";
+import fpcSolarWaterHeaterImg from "@/assets/fpc-solar-water-heater.png.asset.json";
+import evacuatedTubeImg from "@/assets/evacuated-tube.png.asset.json";
 
 export type Spec = { label: string; value: string };
 
@@ -48,7 +50,7 @@ export const products: Product[] = [
     description: "Efficient evacuated tube collector water heaters for homes, hostels and hospitals.",
     detail:
       "Novatussolar supplies evacuated tube collector (ETC) solar water heating systems sized from 100 L to 750 L. Each system pairs high-absorption vacuum tubes with a PUF insulated storage tank so hot water stays available through the evening, with no running cost and almost no maintenance.",
-    img: residentialImg,
+    img: etcWaterHeaterImg.url,
     variants: [
       {
         slug: "etc-tank-gi-ms",
@@ -106,7 +108,7 @@ export const products: Product[] = [
     description: "High-absorption vacuum tubes that deliver hot water even on cloudy Pune days.",
     detail:
       "Evacuated tube collectors use vacuum insulated borosilicate tubes to trap heat with minimal loss, so they keep performing in diffused light and low ambient temperatures. Tubes are individually replaceable, which makes them ideal for retrofits and long-life commercial hot water loops.",
-    img: commercialImg,
+    img: evacuatedTubeImg.url,
     variants: [
       {
         slug: "standard",
@@ -195,7 +197,7 @@ export const products: Product[] = [
     description: "Durable flat-plate absorbers for high-pressure plumbing and commercial hot water.",
     detail:
       "Flat plate collectors use a copper riser and header absorber under toughened glass glazing. The rugged build handles pressurised plumbing lines and continuous rooftop exposure, which makes them the preferred choice for hotels, high-rises and industrial hot water.",
-    img: commercialImg,
+    img: flatPlateCollectorImg.url,
     variants: [
       {
         slug: "standard",
@@ -229,7 +231,7 @@ export const products: Product[] = [
     description: "Flat-plate collector based systems built for pressurised and non-pressurised needs.",
     detail:
       "FPC solar water heaters combine flat plate collectors with pressurised or non-pressurised storage, scaling from a 100 L home system to a 5000 L bulk installation. Optional electric backup keeps supply steady through long monsoon spells.",
-    img: residentialImg,
+    img: fpcSolarWaterHeaterImg.url,
     variants: [
       {
         slug: "pressurised-tank",
