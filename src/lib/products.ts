@@ -52,7 +52,7 @@ export const products: Product[] = [
     description: "Efficient evacuated tube collector water heaters for homes, hostels and hospitals.",
     detail:
       "Novatussolar supplies evacuated tube collector (ETC) solar water heating systems sized from 100 L to 750 L. Each system pairs high-absorption vacuum tubes with a PUF insulated storage tank so hot water stays available through the evening, with no running cost and almost no maintenance.",
-    img: residentialImg,
+    img: etcWaterHeaterImg.url,
     variants: [
       {
         slug: "etc-tank-gi-ms",
