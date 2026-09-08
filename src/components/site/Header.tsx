@@ -112,15 +112,6 @@ export function Header() {
                 </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="start" className="w-72 rounded-xl p-2">
-                <DropdownMenuItem asChild>
-                  <Link
-                    to="/products"
-                    className="cursor-pointer rounded-lg px-3 py-2 text-sm font-medium"
-                  >
-                    All Products
-                  </Link>
-                </DropdownMenuItem>
-                <hr className="my-1 border-border" />
                 {products.map((p) => (
                   <div key={p.slug} className="py-0.5">
                     <div className="flex items-center justify-between">
@@ -288,15 +279,6 @@ export function Header() {
               </button>
               {productsOpen ? (
                 <ul className="mt-1 grid gap-1 pl-4">
-                  <li>
-                    <Link
-                      to="/products"
-                      onClick={() => setOpen(false)}
-                      className="block rounded-2xl px-4 py-2 text-sm font-medium hover:bg-secondary"
-                    >
-                      All Products
-                    </Link>
-                  </li>
                   {products.map((p) => (
                     <li key={p.slug}>
                       <div className="flex items-center justify-between">
