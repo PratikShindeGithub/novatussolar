@@ -78,7 +78,7 @@ function Page() {
             alt={`${product.title} installed by Novatussolar in Pune`}
             width={1024}
             height={768}
-            className="glass-card aspect-[4/3] w-full rounded-[2rem] object-contain p-3"
+            className="aspect-[4/3] w-full rounded-[2rem] object-contain"
           />
           <div>
             <span className="grid size-12 place-items-center rounded-2xl bg-secondary text-primary">
